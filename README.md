@@ -67,7 +67,9 @@ docker-compose up --build -d
 
 ## Verify the Setup
 
-[https://localhost:8443](https://localhost:8443)
+Visit [https://localhost:8443](https://localhost:8443) and login with the username(`user1`) and password you created before.
+
+
 
 >**Note:** 
 >- The auth and certs directories are included in .gitignore for security reasons.
