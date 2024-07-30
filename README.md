@@ -1,6 +1,16 @@
 # docker-compose-secure-app
 
 A Docker Compose setup for securely serving applications using Nginx with HTTPS (TLS) and basic authentication. This project configures SSL/TLS certificates and user authentication to protect and restrict access to your application.
+- [docker-compose-secure-app](#docker-compose-secure-app)
+  - [Project Structure](#project-structure)
+  - [Setup Instructions](#setup-instructions)
+    - [Generate SSL Certificates](#generate-ssl-certificates)
+    - [Install `htpasswd` Utility](#install-htpasswd-utility)
+    - [Create the `.htpasswd` File and user1](#create-the-htpasswd-file-and-user1)
+  - [Build and Run the Docker Compose Setup](#build-and-run-the-docker-compose-setup)
+- [Verify the Setup](#verify-the-setup)
+  - [License](#license)
+
 
 ## Project Structure
 
