@@ -1,14 +1,16 @@
 # docker-compose-secure-app
 
-A Docker Compose setup for securely serving applications with Nginx, featuring HTTPS (TLS) and basic authentication. This project includes configuration for SSL/TLS certificates and user authentication to ensure your application is protected and accessible only to authorized users.
+A Docker Compose setup for securely serving applications using Nginx with HTTPS (TLS) and basic authentication. This project configures SSL/TLS certificates and user authentication to protect and restrict access to your application.
+
+## Project Structure
 
 ```plaintext
 ├── app
 │   ├── Dockerfile
 │   ├── main.py
 │   └── requirements.txt
-├── auth
-├── certs
+├── auth            # .htpasswd for user authentication (not in Git)
+├── certs           #  SSL/TLS certificates (not in Git)
 │   ├── server.crt
 │   ├── server.csr
 │   └── server.key
@@ -20,28 +22,26 @@ A Docker Compose setup for securely serving applications with Nginx, featuring H
 └── README.md
 ```
 
-# Generate private key
+## Setup Instructions
+### Generate SSL Certificates
 
-openssl genrsa -out server.key 2048
+```sh
 
-# Generate CSR (Certificate Signing Request)
+openssl genrsa -out certs/server.key 2048
+openssl req -new -key certs/server.key -out certs/server.csr
+openssl x509 -req -days 365 -in certs/server.csr -signkey certs/server.key -out certs/server.crt
+```
 
-openssl req -new -key server.key -out server.csr
-
-# Generate self-signed certificate
-
-openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
-
-# Install `htpasswd` Utility
+### Install `htpasswd` Utility
 
 sudo apt-get install apache2-utils
 
-# Create the `.htpasswd` File and user1
+### Create the `.htpasswd` File and user1
 
 mkdir -p ./auth
 htpasswd -c ./auth/.htpasswd user1
 
-# Build and Run the Docker Compose Setup
+## Build and Run the Docker Compose Setup
 
 docker-compose build
 
@@ -50,3 +50,11 @@ docker-compose up
 # Verify the Setup
 
 [https://localhost:8443](https://localhost:8443)
+
+>**Note:** 
+>- The auth and certs directories are included in .gitignore for security reasons.
+>- Ensure that ports 8080 and 8443 are available on your host machine.
+
+## License
+
+Distributed under the Apache License. See [LICENSE](LICENSE) for more information.
