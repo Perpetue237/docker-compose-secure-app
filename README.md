@@ -62,9 +62,7 @@ htpasswd -c ./auth/.htpasswd user1
 
 
 ```sh
-docker-compose build
-
-docker-compose up
+docker-compose up --build -d
 ```
 
 ## Verify the Setup
