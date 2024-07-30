@@ -44,18 +44,27 @@ openssl x509 -req -days 365 -in certs/server.csr -signkey certs/server.key -out 
 
 ### Install `htpasswd` Utility
 
+```sh
 sudo apt-get install apache2-utils
+```
 
 ### Create the `.htpasswd` File and user1
 
+>**Note:** Remember the password you set for `user1` in the `.htpasswd` file. You will need this password to access the secured area of the application.
+
+```sh
 mkdir -p ./auth
 htpasswd -c ./auth/.htpasswd user1
+```
 
 ## Build and Run the Docker Compose Setup
 
+
+```sh
 docker-compose build
 
 docker-compose up
+```
 
 # Verify the Setup
 
