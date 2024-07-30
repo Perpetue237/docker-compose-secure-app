@@ -36,7 +36,7 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 
 sudo apt-get install apache2-utils
 
-# Create the `.htpasswd` File
+# Create the `.htpasswd` File and user1
 
 mkdir -p ./auth
 htpasswd -c ./auth/.htpasswd user1
@@ -49,4 +49,4 @@ docker-compose up
 
 # Verify the Setup
 
-https://localhost:8443
+[https://localhost:8443](https://localhost:8443)
