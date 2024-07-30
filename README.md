@@ -8,7 +8,8 @@ A Docker Compose setup for securely serving applications using Nginx with HTTPS 
     - [Install `htpasswd` Utility](#install-htpasswd-utility)
     - [Create the `.htpasswd` File and user1](#create-the-htpasswd-file-and-user1)
   - [Build and Run the Docker Compose Setup](#build-and-run-the-docker-compose-setup)
-- [Verify the Setup](#verify-the-setup)
+  - [Verify the Setup](#verify-the-setup)
+  - [Stop the Aplication and Clean the System](#stop-the-aplication-and-clean-the-system)
   - [License](#license)
 
 
@@ -66,14 +67,22 @@ docker-compose build
 docker-compose up
 ```
 
-# Verify the Setup
+## Verify the Setup
 
 [https://localhost:8443](https://localhost:8443)
 
 >**Note:** 
 >- The auth and certs directories are included in .gitignore for security reasons.
 >- Ensure that ports 8080 and 8443 are available on your host machine.
+>- The browser may show a warning that the connection is not secure. This is because a self-signed certificate is used for HTTPS. For production, you should obtain a certificate from a trusted Certificate Authority (CA) and configure it for your specific domain to avoid such warnings and ensure a secure connection.
 
+## Stop the Aplication and Clean the System
+
+```sh
+docker-compose down
+docker system prune
+docker volume prune
+```
 ## License
 
 Distributed under the Apache License. See [LICENSE](LICENSE) for more information.
