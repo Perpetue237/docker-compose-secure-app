@@ -11,6 +11,7 @@ A Docker Compose setup for securely serving applications using Nginx with HTTPS 
   - [Verify the Setup](#verify-the-setup)
   - [Stop the Application and Clean the System](#stop-the-application-and-clean-the-system)
   - [License](#license)
+  - [Contact](#contact)
 
 
 ## Project Structure
@@ -86,3 +87,7 @@ docker volume prune
 ## License
 
 Distributed under the Apache License. See [LICENSE](LICENSE) for more information.
+
+## Contact
+
+[Perpetue Kuete Tiayo](https://www.linkedin.com/in/perpetue-k-375306185)
