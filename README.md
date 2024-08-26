@@ -1,7 +1,7 @@
-# docker compose secure app
+# docker compose secure application with TLS and authentication
 
 A Docker Compose setup for securely serving applications using Nginx with HTTPS (TLS) and basic authentication. This project configures SSL/TLS certificates and user authentication to protect and restrict access to your application.
-- [docker compose secure app](#docker-compose-secure-app)
+- [docker compose secure application with TLS and authentication](#docker-compose-secure-application-with-tls-and-authentication)
   - [Project Structure](#project-structure)
   - [Setup Instructions](#setup-instructions)
     - [Generate SSL Certificates](#generate-ssl-certificates)
